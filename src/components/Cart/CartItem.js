@@ -1,6 +1,7 @@
 import classes from './CartItem.module.css';
 
 const CartItem = (props) => {
+  if(props.price === undefined) console.log(props.id, props.price);
   const price = `$${props.price.toFixed(2)}`;
 
   return (
@@ -13,7 +14,7 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className={classes.actions}>
-        <button onClick={props.onRemove}>−</button>
+        <button onClick={props.onRemove}> − </button>
         <button onClick={props.onAdd}>+</button>
       </div>
     </li>
